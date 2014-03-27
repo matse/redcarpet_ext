@@ -1,6 +1,7 @@
 # RedcarpetExt
 
-TODO: Write a gem description
+RedcarpetExt extends the markdown interpretation with the ability to
+ - add classes and attributes like nofollow to links
 
 ## Installation
 
