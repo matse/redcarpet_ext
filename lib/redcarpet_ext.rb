@@ -44,8 +44,8 @@ module RedcarpetExt
           end
         end
 
-        html_options = { title: title } unless title.empty?
-        html_options = html_options.merge({ class: classes }) unless classes.empty?
+        html_options = { title: title } unless title.nil? || title.empty?
+        html_options = html_options.merge({ class: classes }) unless classes.nil? || classes.empty?
 
         if attributes
           html_options = html_options.merge(parse_attributes(attributes))
@@ -53,7 +53,7 @@ module RedcarpetExt
         link_to(content, link, html_options)
 
       rescue Exception => e
-        if title.empty?
+        if title.nil? || title.empty?
           link_to(content, link)
         else
           link_to(content, link, title: title)

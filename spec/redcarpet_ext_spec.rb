@@ -52,6 +52,7 @@ describe 'ExtendedMarkdown#link' do
   end
   it 'returns a nice formed html link' do
     expect(@markdown.link('src', '', 'Linktext')).to eq '<a href="src">Linktext</a>'
+    expect(@markdown.link('src', nil, 'Linktext')).to eq '<a href="src">Linktext</a>'
     expect(@markdown.link('src', 'title', 'Linktext')).to eq '<a href="src" title="title">Linktext</a>'
     expect(@markdown.link('http://www.example.com "title"|class1 class2 blank nofollow', '', 'Linktext')).to eq '<a class="class1 class2" href="http://www.example.com" rel="nofollow" target="_blank" title="title">Linktext</a>'
   end
