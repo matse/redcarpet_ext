@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["matthias.seelig@ymail.com"]
   spec.description   = %q{Extending redcarpet Markdown with a couple of needed extensions}
   spec.summary       = %q{Extend Markdown on the red carpet}
-  spec.homepage      = ""
+  spec.homepage      = "http://github.com/matse/redcarpet_ext"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
