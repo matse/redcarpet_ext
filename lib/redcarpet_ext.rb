@@ -7,7 +7,7 @@ module RedcarpetExt
     include ActionView::Helpers::UrlHelper
 
     def parse_link(link)
-      matches = link.match(/^((?:(?:http|ftp):\/\/)?[\w\d\.]+)(?:\s\"([\d\s\w]+)\"?)?(?:\|([\w\s\d-]+)?)?$/)
+      matches = link.match(/^((?:(?:[A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\p{L}\.\-]+|(?:www\.|[\-;:&=\+\$,\w\p{L}]+@)[A-Za-z0-9\p{L}\.\-]+)(?:(?:\/[\+~%\/\.\w\-_\p{L}]*)?\??(?:[\-\+=&;%@\.\w_\p{L}]*)#?(?:[\.\!\/\\\w\p{L}]*))?)(?:\s\"([\p{L}\d\s\w]+)\"?)?(?:\|([\p{L}\w\s\d-]+)?)?$/u)
       {
           url: matches[1],
           title: matches[2],

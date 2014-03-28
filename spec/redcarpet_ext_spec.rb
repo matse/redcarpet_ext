@@ -56,6 +56,12 @@ describe 'ExtendedMarkdown#link' do
     expect(@markdown.link('src', 'title', 'Linktext')).to eq '<a href="src" title="title">Linktext</a>'
     expect(@markdown.link('http://www.example.com "title"|class1 class2 blank nofollow', '', 'Linktext')).to eq '<a class="class1 class2" href="http://www.example.com" rel="nofollow" target="_blank" title="title">Linktext</a>'
   end
+  it 'returns link with GET parameters' do
+    expect(@markdown.link('http://www.example.com/foobar?id=212&blah=foo "title"|class1 class2 blank nofollow', '', 'Linktext')).to eq '<a class="class1 class2" href="http://www.example.com/foobar?id=212&amp;blah=foo" rel="nofollow" target="_blank" title="title">Linktext</a>'
+  end
+  it 'returns link if url has umlauts' do
+    expect(@markdown.link('http://www.häuser.eu/Artà "title"|class1 class2 blank nofollow', '', 'Linktext')).to eq '<a class="class1 class2" href="http://www.häuser.eu/Artà" rel="nofollow" target="_blank" title="title">Linktext</a>'
+  end
 end
 
 
