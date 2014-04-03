@@ -62,6 +62,9 @@ describe 'ExtendedMarkdown#link' do
   it 'returns link if url has umlauts' do
     expect(@markdown.link('http://www.häuser.eu/Artà "title"|class1 class2 blank nofollow', '', 'Linktext')).to eq '<a class="class1 class2" href="http://www.häuser.eu/Artà" rel="nofollow" target="_blank" title="title">Linktext</a>'
   end
+  it 'respects braces ()' do
+    expect(@markdown.link('http://de.wikipedia.org/wiki/Petra_(Mallorca) "title"|class1 class2 blank nofollow', '', 'Linktext')).to eq '<a class="class1 class2" href="http://de.wikipedia.org/wiki/Petra_(Mallorca)" rel="nofollow" target="_blank" title="title">Linktext</a>'
+  end
 end
 
 
